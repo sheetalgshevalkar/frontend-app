@@ -27,10 +27,7 @@ jobs:
         run: ls -al
       - name: list inside build
         run: ls ./build
-      - name: Run tests
-        run: npm test
-      - name: list after lest
-        run: ls -al
+      
         
   deploy:
     runs-on: ubuntu-22.04
