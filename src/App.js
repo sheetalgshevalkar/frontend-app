@@ -5,12 +5,12 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost/api/data').then((response) => {
-  setData(response.data);
- });
-    
-  
+    axios.get('/api/data').then((response) => {
+      setData(response.data);
+    });
   }, []);
+  
+ 
 
   if (!data) {
     return <div>Loading...</div>;
