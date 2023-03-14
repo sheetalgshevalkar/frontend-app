@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + '/api/data').then((response) => {
+    axios.get('http://localhost:7000/api/data').then((response) => {
       setData(response.data);
     });
     
