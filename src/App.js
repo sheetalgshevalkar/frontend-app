@@ -5,9 +5,10 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get(/api/data).then((response) => {
+    axios.get('/api/data').then((response) => {
       setData(response.data);
     });
+  
     
   
   }, []);
