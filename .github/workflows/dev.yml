@@ -40,8 +40,8 @@ jobs:
       - name: Change ownership of /var/myapp
         run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "sudo chown -R ${{ secrets.EC2_USERNAME }}:${{ secrets.EC2_USERNAME }} /var/myapp"
 
-      - name: Delete previous build
-        run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "sudo rm -rf /var/myapp/"
+      #- name: Delete previous build
+       # run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "sudo rm -rf /var/myapp/"
       - name: Copy files to EC2
         uses: appleboy/scp-action@master
         with:
