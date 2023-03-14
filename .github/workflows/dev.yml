@@ -37,6 +37,9 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.0
         with:
          ssh-private-key: ${{ secrets.EC2_KEY }}
+      - name: Change ownership of /var/myapp
+        run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "sudo chown -R ${{ secrets.EC2_USERNAME }}:${{ secrets.EC2_USERNAME }} /var/myapp"
+
       - name: Delete previous build
         run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "rm -rf /var/myapp/"
       - name: Copy files to EC2
