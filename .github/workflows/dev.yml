@@ -48,8 +48,9 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_KEY }}
-          source: ./build/
+          source: ./build/*
           target: "/var/myapp"
+          sync: true
       - name: List files on EC2
         run: ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "ls -al /var/myapp"
      
