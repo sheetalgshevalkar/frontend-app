@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://15.206.148.208:7000/api/data').then((response) => {
+    axios.get(process.env.REACT_APP_API_URL).then((response) => {
       setData(response.data);
     });
     
